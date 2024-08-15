@@ -14,7 +14,8 @@ const router = createRouter({
     {
       path: '/',
       name: 'passenger-list-view',
-      component: PassengerListView,
+      //Olympic-list-view
+      component: PassengerListView, //OlympicList
       props: route => ({
         page: parseInt(route.query.page as string || '1', 10),
         limit: 3
@@ -23,12 +24,14 @@ const router = createRouter({
     {
       path: '/passenger/:id',
       name: 'passenger-layout',
+      //medal-layout
       component: PassengerLayoutView,
       props: true,
       children: [
         {
           path: '',
           name: 'passenger-detail',
+          //medal-detail
           component: PassengerDetailView,
           props: true
         },
@@ -41,6 +44,7 @@ const router = createRouter({
         {
           path: 'edit',
           name: 'passenger-edit-view',
+          //medal-edit-view
           component: PassengerEditView,
           props: true
         }
